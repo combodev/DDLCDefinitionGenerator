@@ -202,7 +202,7 @@ Copyright ComboDev 2020
         result = ""
         for prefix in self.posePrefixes:
             for suffix in self.expressionSuffixes:
-                result += "image " + self.name + " " + prefix + suffix + " = im.Composite((960, 960), (0, 0), \"" + self.path + "/" + prefix + self.file_extension + "\"" + ", (960, 960), (0, 0), \"" + self.expressionPath + "/" + suffix + self.file_extension + "\")\n"
+                result += "image " + self.name + " " + prefix + suffix + " = im.Composite((960, 960), (0, 0), \"" + self.path + "/" + prefix + self.file_extension + "\"" + ", (0, 0), \"" + self.expressionPath + "/" + suffix + self.file_extension + "\")\n"
             result += "\n"
         self.GenerateCharacterDefinitionFile(result)
     
@@ -227,7 +227,7 @@ Copyright ComboDev 2020
                 print(r_list)
             combinationCount += 1
             for suffix in self.expressionSuffixes:
-                result += "image " + self.name + " " + str(combinationCount) + suffix + " = im.Composite((960, 960), (0, 0), \"" + self.path + "/" + str(combination[0]) + self.l_suffix + self.file_extension + "\"" + ", (960, 960), (0, 0), \"" + self.path + "/" + str(combination[1]) + self.r_suffix + self.file_extension + "\"" + ", (960, 960), (0, 0), \"" + self.expressionPath + "/" + suffix + self.file_extension + "\")\n"
+                result += "image " + self.name + " " + str(combinationCount) + suffix + " = im.Composite((960, 960), (0, 0), \"" + self.path + "/" + str(combination[0]) + self.l_suffix + self.file_extension + "\"" + ", (0, 0), \"" + self.path + "/" + str(combination[1]) + self.r_suffix + self.file_extension + "\"" + ", (0, 0), \"" + self.expressionPath + "/" + suffix + self.file_extension + "\")\n"
             result += "\n"
         self.GenerateCharacterDefinitionFile(result)
 
